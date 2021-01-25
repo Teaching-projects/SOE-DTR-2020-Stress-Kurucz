@@ -7,8 +7,8 @@ Emberünk( legyek mondjuk én) készül a tantárgyaiból és mivel szeret halas
 
 Adatok táblázatos módon:
 
-|Beadandó tantárgya| Stressz |Idő|
-|--|--|
+|Beadandó tantárgya|Stressz|Idő|
+|--|--|--|
 |DTR|50|6|
 |Önlab|120|12|
 |Web1|55|5|
@@ -16,8 +16,8 @@ Adatok táblázatos módon:
 |Szoftver|10|3|
 |IRB|20|5|
 
-|Játék neve| StresszCsökkenés |Idő|
-|--|--|
+|Játék neve|StresszCsökkenés|Idő|
+|--|--|--|
 |AssassinsCreed|20|4|
 |CallofDuty|35|5|
 |GodOfWar|50|6|
