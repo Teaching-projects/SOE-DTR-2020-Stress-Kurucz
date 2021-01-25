@@ -5,6 +5,26 @@ Emberünk( legyek mondjuk én) készül a tantárgyaiból és mivel szeret halas
 
 ## Beviteli adatok
 
+Adatok táblázatos módon:
+
+|Beadandó tantárgya| Stressz |Idő|
+|--|--|
+|DTR|50|6|
+|Önlab|120|12|
+|Web1|55|5|
+|TermInfo|40|6|
+|Szoftver|10|3|
+|IRB|20|5|
+
+|Játék neve| StresszCsökkenés |Idő|
+|--|--|
+|AssassinsCreed|20|4|
+|CallofDuty|35|5|
+|GodOfWar|50|6|
+|Gta|25|3|
+|RogueCompany|10|1|
+|AoE2|55|7|
+
 Három halmazzal(set) dolgozok.
 
 Az egyik a beadandók halmaza. Minden beadandónak van egy Stressz mennyisége és egy időtartama.
