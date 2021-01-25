@@ -2,17 +2,15 @@
 
 set Beadandok;
 param Stressz{Beadandok};
-param IdoB{Beadandok};
+param IdoB{Beadandok};	#óra
 
 
 set Jatek;
 param StresszCsokkenes{Jatek};
-param IdoJ{Jatek};
+param IdoJ{Jatek};	#óra
 
-param maxIdo;
-
+param maxIdo;	#óra
 param IdegOsszeroppanasHatar;
-
 param AlapStressz;
 
 param napokszama;
@@ -23,10 +21,9 @@ set Napok:= 1..napokszama ;
 #variables
 
 
-var kesz{Beadandok,Napok} binary;
-var jatszott{Jatek,Napok} binary;
+var kesz{Beadandok,Napok} binary; # kész-e a beadandó
+var jatszott{Jatek,Napok} binary; # játszottunk-e a játékkal
 
-var elteltIdo{Napok,Jatek};
 
 
 
@@ -96,7 +93,7 @@ IRB			20			5
 ;
 
 set Jatek:= AssassinsCreed CallofDuty GodOfWar Gta RogueCompany AoE2;
-
+	
 param:			StresszCsokkenes		IdoJ:=
 AssassinsCreed	20						4
 CallofDuty		35						5
