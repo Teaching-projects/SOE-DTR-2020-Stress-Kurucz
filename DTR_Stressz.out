@@ -1,0 +1,271 @@
+Problem:    DTR_Stressz
+Rows:       61
+Columns:    72 (72 integer, 72 binary)
+Non-zeros:  864
+Status:     INTEGER OPTIMAL
+Objective:  StresszSzint = 85 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 MindenNapEgyBeadando[1]
+                                   1             1             = 
+     2 MindenNapEgyBeadando[2]
+                                   1             1             = 
+     3 MindenNapEgyBeadando[3]
+                                   1             1             = 
+     4 MindenNapEgyBeadando[4]
+                                   1             1             = 
+     5 MindenNapEgyBeadando[5]
+                                   1             1             = 
+     6 MindenNapEgyBeadando[6]
+                                   1             1             = 
+     7 MindenBeadandoEgyszer[DTR]
+                                   1             1             = 
+     8 MindenBeadandoEgyszer[ONLAB]
+                                   1             1             = 
+     9 MindenBeadandoEgyszer[WEB1]
+                                   1             1             = 
+    10 MindenBeadandoEgyszer[TERMINFO]
+                                   1             1             = 
+    11 MindenBeadandoEgyszer[SZOFTVER]
+                                   1             1             = 
+    12 MindenBeadandoEgyszer[IRB]
+                                   1             1             = 
+    13 NemDoglokMeg[1]
+                                  85                         100 
+    14 NemDoglokMeg[2]
+                                 100                         100 
+    15 NemDoglokMeg[3]
+                                  85                         100 
+    16 NemDoglokMeg[4]
+                                  60                         100 
+    17 NemDoglokMeg[5]
+                                  65                         100 
+    18 NemDoglokMeg[6]
+                                  85                         100 
+    19 NincsNegativStressz[1]
+                                  85            -0               
+    20 NincsNegativStressz[2]
+                                 100            -0               
+    21 NincsNegativStressz[3]
+                                  85            -0               
+    22 NincsNegativStressz[4]
+                                  60            -0               
+    23 NincsNegativStressz[5]
+                                  65            -0               
+    24 NincsNegativStressz[6]
+                                  85            -0               
+    25 CannotGoOverTime[1,DTR]
+                                   4                          10 
+    26 CannotGoOverTime[1,ONLAB]
+                                   4                           4 
+    27 CannotGoOverTime[1,WEB1]
+                                   4                          11 
+    28 CannotGoOverTime[1,TERMINFO]
+                                   4                          10 
+    29 CannotGoOverTime[1,SZOFTVER]
+                                   4                          13 
+    30 CannotGoOverTime[1,IRB]
+                                   4                          11 
+    31 CannotGoOverTime[2,DTR]
+                                   4                          10 
+    32 CannotGoOverTime[2,ONLAB]
+                                   4                           4 
+    33 CannotGoOverTime[2,WEB1]
+                                   4                          11 
+    34 CannotGoOverTime[2,TERMINFO]
+                                   4                          10 
+    35 CannotGoOverTime[2,SZOFTVER]
+                                   4                          13 
+    36 CannotGoOverTime[2,IRB]
+                                   4                          11 
+    37 CannotGoOverTime[3,DTR]
+                                   4                          10 
+    38 CannotGoOverTime[3,ONLAB]
+                                   4                           4 
+    39 CannotGoOverTime[3,WEB1]
+                                   4                          11 
+    40 CannotGoOverTime[3,TERMINFO]
+                                   4                          10 
+    41 CannotGoOverTime[3,SZOFTVER]
+                                   4                          13 
+    42 CannotGoOverTime[3,IRB]
+                                   4                          11 
+    43 CannotGoOverTime[4,DTR]
+                                   4                          10 
+    44 CannotGoOverTime[4,ONLAB]
+                                   4                           4 
+    45 CannotGoOverTime[4,WEB1]
+                                   4                          11 
+    46 CannotGoOverTime[4,TERMINFO]
+                                   4                          10 
+    47 CannotGoOverTime[4,SZOFTVER]
+                                   4                          13 
+    48 CannotGoOverTime[4,IRB]
+                                   4                          11 
+    49 CannotGoOverTime[5,DTR]
+                                   4                          10 
+    50 CannotGoOverTime[5,ONLAB]
+                                   4                           4 
+    51 CannotGoOverTime[5,WEB1]
+                                   4                          11 
+    52 CannotGoOverTime[5,TERMINFO]
+                                   4                          10 
+    53 CannotGoOverTime[5,SZOFTVER]
+                                   4                          13 
+    54 CannotGoOverTime[5,IRB]
+                                   4                          11 
+    55 CannotGoOverTime[6,DTR]
+                                   4                          10 
+    56 CannotGoOverTime[6,ONLAB]
+                                   4                           4 
+    57 CannotGoOverTime[6,WEB1]
+                                   4                          11 
+    58 CannotGoOverTime[6,TERMINFO]
+                                   4                          10 
+    59 CannotGoOverTime[6,SZOFTVER]
+                                   4                          13 
+    60 CannotGoOverTime[6,IRB]
+                                   4                          11 
+    61 StresszSzint               85                             
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 kesz[DTR,1]  *              0             0             1 
+     2 kesz[ONLAB,1]
+                    *              1             0             1 
+     3 kesz[WEB1,1] *              0             0             1 
+     4 kesz[TERMINFO,1]
+                    *              0             0             1 
+     5 kesz[SZOFTVER,1]
+                    *              0             0             1 
+     6 kesz[IRB,1]  *              0             0             1 
+     7 kesz[DTR,2]  *              1             0             1 
+     8 kesz[ONLAB,2]
+                    *              0             0             1 
+     9 kesz[WEB1,2] *              0             0             1 
+    10 kesz[TERMINFO,2]
+                    *              0             0             1 
+    11 kesz[SZOFTVER,2]
+                    *              0             0             1 
+    12 kesz[IRB,2]  *              0             0             1 
+    13 kesz[DTR,3]  *              0             0             1 
+    14 kesz[ONLAB,3]
+                    *              0             0             1 
+    15 kesz[WEB1,3] *              0             0             1 
+    16 kesz[TERMINFO,3]
+                    *              0             0             1 
+    17 kesz[SZOFTVER,3]
+                    *              0             0             1 
+    18 kesz[IRB,3]  *              1             0             1 
+    19 kesz[DTR,4]  *              0             0             1 
+    20 kesz[ONLAB,4]
+                    *              0             0             1 
+    21 kesz[WEB1,4] *              0             0             1 
+    22 kesz[TERMINFO,4]
+                    *              0             0             1 
+    23 kesz[SZOFTVER,4]
+                    *              1             0             1 
+    24 kesz[IRB,4]  *              0             0             1 
+    25 kesz[DTR,5]  *              0             0             1 
+    26 kesz[ONLAB,5]
+                    *              0             0             1 
+    27 kesz[WEB1,5] *              0             0             1 
+    28 kesz[TERMINFO,5]
+                    *              1             0             1 
+    29 kesz[SZOFTVER,5]
+                    *              0             0             1 
+    30 kesz[IRB,5]  *              0             0             1 
+    31 kesz[DTR,6]  *              0             0             1 
+    32 kesz[ONLAB,6]
+                    *              0             0             1 
+    33 kesz[WEB1,6] *              1             0             1 
+    34 kesz[TERMINFO,6]
+                    *              0             0             1 
+    35 kesz[SZOFTVER,6]
+                    *              0             0             1 
+    36 kesz[IRB,6]  *              0             0             1 
+    37 jatszott[AssassinsCreed,1]
+                    *              0             0             1 
+    38 jatszott[CallofDuty,1]
+                    *              0             0             1 
+    39 jatszott[GodOfWar,1]
+                    *              0             0             1 
+    40 jatszott[Gta,1]
+                    *              1             0             1 
+    41 jatszott[RogueCompany,1]
+                    *              1             0             1 
+    42 jatszott[AoE2,1]
+                    *              0             0             1 
+    43 jatszott[AssassinsCreed,2]
+                    *              0             0             1 
+    44 jatszott[CallofDuty,2]
+                    *              0             0             1 
+    45 jatszott[GodOfWar,2]
+                    *              0             0             1 
+    46 jatszott[Gta,2]
+                    *              1             0             1 
+    47 jatszott[RogueCompany,2]
+                    *              1             0             1 
+    48 jatszott[AoE2,2]
+                    *              0             0             1 
+    49 jatszott[AssassinsCreed,3]
+                    *              0             0             1 
+    50 jatszott[CallofDuty,3]
+                    *              0             0             1 
+    51 jatszott[GodOfWar,3]
+                    *              0             0             1 
+    52 jatszott[Gta,3]
+                    *              1             0             1 
+    53 jatszott[RogueCompany,3]
+                    *              1             0             1 
+    54 jatszott[AoE2,3]
+                    *              0             0             1 
+    55 jatszott[AssassinsCreed,4]
+                    *              0             0             1 
+    56 jatszott[CallofDuty,4]
+                    *              0             0             1 
+    57 jatszott[GodOfWar,4]
+                    *              0             0             1 
+    58 jatszott[Gta,4]
+                    *              1             0             1 
+    59 jatszott[RogueCompany,4]
+                    *              1             0             1 
+    60 jatszott[AoE2,4]
+                    *              0             0             1 
+    61 jatszott[AssassinsCreed,5]
+                    *              0             0             1 
+    62 jatszott[CallofDuty,5]
+                    *              0             0             1 
+    63 jatszott[GodOfWar,5]
+                    *              0             0             1 
+    64 jatszott[Gta,5]
+                    *              1             0             1 
+    65 jatszott[RogueCompany,5]
+                    *              1             0             1 
+    66 jatszott[AoE2,5]
+                    *              0             0             1 
+    67 jatszott[AssassinsCreed,6]
+                    *              0             0             1 
+    68 jatszott[CallofDuty,6]
+                    *              0             0             1 
+    69 jatszott[GodOfWar,6]
+                    *              0             0             1 
+    70 jatszott[Gta,6]
+                    *              1             0             1 
+    71 jatszott[RogueCompany,6]
+                    *              1             0             1 
+    72 jatszott[AoE2,6]
+                    *              0             0             1 
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output
