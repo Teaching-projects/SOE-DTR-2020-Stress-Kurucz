@@ -1,7 +1,7 @@
 # SOE-DTR-2020-Stress-Kurucz
 
 ## Bevezetés
-Emberünk( legyek mondjuk én) készül a tantárgyaiból és mivel szeret halasztgatni minden egy hétre maradt. Mivel nagyon kemény ezért bármilyen stresszes is legyen megcsinálja egy hét alatt mindet. Vasárnap kezdi az egészet és Péntek az utolsó nap( 6 napon keresztül dolgozik) Hogy a stresszt levezesse, közben videójátékokat játszik.
+Emberünk( legyek mondjuk én) készül a tantárgyaiból és mivel szeret halasztgatni minden egy hétre maradt. Mivel nagyon kemény(annyira nem mert csak egy beadandót képes megcsinálni egy nap) ezért bármilyen stresszes is legyen megcsinálja egy hét alatt mindet. Vasárnap kezdi az egészet és Péntek az utolsó nap( 6 napon keresztül dolgozik) Hogy a stresszt levezesse, közben videójátékokat játszik.
 
 ## Beviteli adatok
 
@@ -16,14 +16,14 @@ Adatok táblázatos módon:
 |Szoftver|10|3|
 |IRB|20|5|
 
-|Játék neve|StresszCsökkenés|Idő|
-|--|--|--|
-|AssassinsCreed|20|4|
-|CallofDuty|35|5|
-|GodOfWar|50|6|
-|Gta|25|3|
-|RogueCompany|10|1|
-|AoE2|55|7|
+|Játék neve|Stresszcsökkenés|Idő|Szem romlás szintje|
+|--|--|--|--|
+|AssassinsCreed|20|4|25|
+|CallofDuty|35|5|20|
+|GodOfWar|50|6|80|
+|Gta|25|3|30|
+|RogueCompany|10|1|30|
+|AoE2|55|7|50|
 
 Három halmazzal(set) dolgozok.
 
@@ -34,27 +34,30 @@ set Beadandok;
 param Stressz{Beadandok};
 param IdoB{Beadandok};
 ```
-A második a játékok halmaza. A játékoknak úgyszintén a stressz és időtartam paraméterei lesznek, kivéve hogy a stresszt majd csökkenteni fogják.
+A második a játékok halmaza. A játékoknak úgyszintén a stressz és időtartam paraméterei lesznek, kivéve hogy a stresszt majd csökkenteni fogják. Van még egy "SzemGyilok" paraméter. Ez a játék által a szem romlásának szintjét adja meg eg nem létező mértékegysében.
 
 ```ampl
 set Jatek;
 param StresszCsokkenes{Jatek};
 param IdoJ{Jatek};
+param SzemGyilok{Jatek};
+
 ```
-A harmadik pedig a napok halmaza. A Napok számát egy paraméterrel adjuk meg ezáltal lehet változtatni a beadandókra való hosszát napokban mérve ha akarjuk.
+A harmadik pedig a napok halmaza. Minden napnak van egy hossza, ami megadja hogy mennyi időt foglalkozunk játékkal és beadandózással.Ezen kívűl van még egy AlapStressz paraméter ami a mindennapi élet stresszét adja meg ami minden Nap beleszámít a szereplőnk stresszszintjébe.
 
 ```ampl
-param napokszama;
-set Napok:= 1..napokszama ;
+set Napok;
+param AlapStressz{Napok} ;
+param Hossz{Napok};
+#s
 ```
-A nem halmazokra vonatkozó paraméterekből három van.
+A nem halmazokra vonatkozó paraméterekből egy van.
 
 ```ampl
-param maxIdo;
 param IdegOsszeroppanasHatar;
-param AlapStressz;
 ```
-A maxIdo megadja hogy egy nap mennyi időt tölthetünk el beadandózással és játékkal hiszen szeretnénk aludni is. Mint minden embernek, van egy Idegösszeroppanás határunk ami megadja azta stressz szintet amit nem lenne szabad elérnünk. Ezen kívűl van még egy AlapStressz paraméter ami a mindennapi élet stresszét adja meg ami minden Nap beleszámít a szereplőnk stresszszintjébe.
+Mint minden embernek, van egy Idegösszeroppanás határunk ami megadja azta stressz szintet amit nem lenne szabad elérnünk. 
+
 A paramétereken kívűl van még 2 darab bináris változó amik megmutatják hogy egy-egy beadandó kész van-e illetve melyik játékkal játszottunk.0-ás érték a nem 1-es az igen.
 
 ```ampl
@@ -96,10 +99,11 @@ s.t. CannotGoOverTime {n in Napok,b in Beadandok} :
  ```
  
 ## Célfüggvény
-A modellünk célfüggvényének feladata hogy mire végzünk a beadandókkal minimális stressz szintet érjünk el.
+A modellünk célfüggvényének feladata hogy mire végzünk a beadandókkal minél kevesebbet romoljon a szemünk.
 ```ampl
-minimize StresszSzint:
-	AlapStressz + (sum{b in Beadandok, j in Jatek, n in Napok} Stressz[b] * kesz[b,n] - (sum{b in Beadandok, j in Jatek,n in Napok} StresszCsokkenes[j] * jatszott[j,n]))/6;
+
+minimize SzemRomlas:
+	sum{n in Napok,j in Jatek } SzemGyilok[j] * jatszott[j,n];
 ```
 
 #Kiíratás
@@ -126,32 +130,37 @@ data;
 set Beadandok:= DTR ONLAB WEB1 TERMINFO SZOFTVER IRB;
 
 param: 		Stressz		IdoB:=
-DTR			50			6
-ONLAB		120			12
-WEB1		55			5
-TERMINFO	40			6
-SZOFTVER	10			3
-IRB			20			5
+DTR			50			5
+ONLAB		120			10
+WEB1		55			3
+TERMINFO	40			4
+SZOFTVER	10			2
+IRB			20			4
 
 ;
 
 set Jatek:= AssassinsCreed CallofDuty GodOfWar Gta RogueCompany AoE2;
-
-param:			StresszCsokkenes		IdoJ:=
-AssassinsCreed	20						4
-CallofDuty		35						5
-GodOfWar		50						6
-Gta				25						3
-RogueCompany	10						1
-AoE2			55						7
+	
+param:			StresszCsokkenes		IdoJ	SzemGyilok:=
+AssassinsCreed	20						4		25
+CallofDuty		35						4		20
+GodOfWar		50						6		80
+Gta				25						3		30
+RogueCompany	10						1		30
+AoE2			55						7		50
 ;
 
-param napokszama:= 6;
+set Napok:= 1	2	3	4	5	6;
 
-param maxIdo :=  16;
-param AlapStressz:= 0 ;
+param:		AlapStressz Hossz:=
+1	10			16
+2		20			14
+3		10			16
+4		10			12
+5	30			12
+6		15			18
+;
+
+
 param IdegOsszeroppanasHatar:= 100;
-
-end; 
-
 ```
